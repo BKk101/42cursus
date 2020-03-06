@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 23:58:32 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 15:28:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:24:19 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ int         write_fxX(va_list ap, char c, t_format f_info)
 {
     unsigned int temp;
     
+    (void)f_info;
     temp = va_arg(ap, unsigned int);
     return (write_hex(c, temp, 0));
 }
 
 int         write_felse(char c, t_format f_info) //리턴값 플래그 설정(자리수) + 1
 {
+    (void)f_info;
     write(1, &c, 1);
     return (1);
 }

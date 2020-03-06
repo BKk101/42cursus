@@ -6,15 +6,15 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:48:50 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/04 20:41:27 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:21:16 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t  ft_strlen(const char *s)
+int  ft_strlen(const char *s)
 {
-    size_t len;
+    int len;
 
     len = 0;
     while (s[len])

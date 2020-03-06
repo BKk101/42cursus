@@ -6,11 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 21:11:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 16:48:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:15:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftprintf.h"
 
 static char     *ftt_strcat(char *dest, char const *src)
 {

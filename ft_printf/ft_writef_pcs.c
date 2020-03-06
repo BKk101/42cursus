@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 23:09:10 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/05 23:15:06 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:24:21 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int     write_fp(va_list ap, t_format f_info)
 {
     char    *temp;
     
+    (void)f_info;
     temp = va_arg(ap, char *);
     return (write_hex((long long)temp, 0));
 }
@@ -42,6 +43,7 @@ int     write_fc(va_list ap, t_format f_info)
 {
     char temp;
 
+    (void)f_info;
     temp = va_arg(ap, int);
     write(1, &temp, sizeof(char));
     return (1);
@@ -52,6 +54,7 @@ int     write_fs(va_list ap, t_format f_info)
     char    *temp;
     int     len;
     
+    (void)f_info;
     temp = va_arg(ap, char *);
     len = ft_strlen(temp);
     write(1, temp, len);

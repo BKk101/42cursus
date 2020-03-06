@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 17:47:15 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:22:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ int     write_fu(va_list ap, t_format f_info);
 int     write_fxX(va_list ap, char c, t_format f_info);
 int     write_felse(char c, t_format f_info);
 
-size_t  ft_strlen(const char *s);
+int     ft_strlen(const char *s);
 void    *ft_memset(void *s, int c, size_t n);
 int		ft_ischarset(char str, char *charset);
 int     ft_atoi(const char *str);
 size_t  ft_numlen(int num);
 char    *ft_strjoin(char const *s1, char const *s2);
-void    *ft_memmove(void *dest, const void *src, size_t n);
 
 #endif

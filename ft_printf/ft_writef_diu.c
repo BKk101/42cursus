@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 10:58:27 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 18:09:37 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/06 18:41:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ int     write_fdi(va_list ap, t_format f_info)
     int num;
     int size;
 
-    if (f_info.plus && f_info.space)
+    if (f_info.plus > 0 && f_info.space > 0)
         f_info.space = 0;
-    if (f_info.minus && f_info.zero)
+    if (f_info.minus > 0 && f_info.zero > 0)
         f_info.zero = 0; //f_info 전처리 따로 뺴도 될듯
     
     num = va_arg(ap, int);
@@ -98,7 +98,7 @@ int     write_fdi(va_list ap, t_format f_info)
     if (size < ft_strlen(str1))
         size = ft_strlen(str1);
 
-    if (f_info.space > 0 && num >= 0)
+    if (f_info.space > 0 && num >= 0) //uitoa에서 처리
         str2 = ft_strjoin(" ", str1);
     else if (f_info.plus > 0 && num >= 0)
         str2 = ft_strjoin("+", str1);
@@ -107,15 +107,23 @@ int     write_fdi(va_list ap, t_format f_info)
     if (f_info.zero > 0 && f_info.width > ft_strlen(str2))
     {
         str1 = (char *)malloc(size - ft_strlen(str2));
-        memset(str1, '0', sizeof(str1));
+        memset(str1, '0', (size - ft_strlen(str2)));
         str3 = ft_strjoin(str1, str2);
     }
-    if (f_info.minus > 0 && f_info.width > ft_strlen(str2))
+    else if (f_info.minus > 0 && f_info.width > ft_strlen(str2))
     {
         str1 = (char *)malloc(size - ft_strlen(str2));
-        memset(str1, ' ', sizeof(str1));
+        memset(str1, ' ', (size - ft_strlen(str2)));
         str3 = ft_strjoin(str2, str1);
+    }//width만있는경우
+    else if (f_info.width > ft_strlen(str2))
+    {
+        str1 = (char *)malloc(size - ft_strlen(str2));
+        memset(str1, ' ', (size - ft_strlen(str2)));
+        str3 = ft_strjoin(str1, str2);
     }
+    else
+        str3 = str2;
     write(1, str3, size);
     free(str2);
     free(str1);
@@ -128,6 +136,7 @@ int     write_fu(va_list ap, t_format f_info)
     char    *str;
     int     len;
 
+    (void)f_info;
     str = ft_uitoa(va_arg(ap, unsigned int));
     len = ft_strlen(str);
     write(1, str, len);
