@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/07 17:39:40 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/07 22:31:30 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ typedef struct s_format
     int     plus;
     int     space;
     int     zero;
-    //int     hash;
+    int     hash;
     int     width;
     int     precision;
-    //int     length;
+    int     length;
     int     printlen;
     char    *address;
 }               t_format;
@@ -42,7 +42,7 @@ int     write_fxX(va_list ap, char c, t_format f_info);
 int     write_felse(char c, t_format f_info);
 
 int     ft_strlen(const char *s);
-void    *ft_memset(void *s, int c, size_t n);
+void    *ftt_memset(void *s, int c, size_t n);
 int		ft_ischarset(char str, char *charset);
 int     ft_atoi(const char *str);
 size_t  ft_numlen(int num);
