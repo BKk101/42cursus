@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 18:22:41 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/07 17:39:40 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int		ft_ischarset(char str, char *charset);
 int     ft_atoi(const char *str);
 size_t  ft_numlen(int num);
 char    *ft_strjoin(char const *s1, char const *s2);
+void    ft_multifree(int args, ...);
 
 #endif

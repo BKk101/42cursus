@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 18:46:19 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/07 17:39:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ static int classify_f(char c, va_list ap, t_format f_info)
 
 static t_format check_f(const char *arg, va_list ap, t_format f_info)
 {
-    ft_memset(&f_info, -1, sizeof(t_format));
+    ft_memset(&f_info, 0, sizeof(t_format));
+    f_info.precision = -1;
     while (ft_ischarset(*arg, g_synf))
     {
         if (*arg >= '1' && *arg <= '9')
@@ -102,9 +103,10 @@ int main()
     int num;
     //char s[]="applepie";
 
-    num = printf("%-+8d\n", 1234);
+    num = printf("%+0d\n", 1234);
     printf("%d\n", num);
-    num = ft_printf("%-+8d\n", 1234);
+    fflush(stdout);
+    num = ft_printf("%+0d\n", 1234);
     printf("%d\n", num);
     //num = ft_printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
     //printf("%d\n\n", num);
