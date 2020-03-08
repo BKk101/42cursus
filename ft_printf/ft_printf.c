@@ -6,13 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 00:21:36 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/08 14:53:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
-
-static char g_synf[] = "-+ 0#.*123456789hl";
 
 static void init_info(t_format *f_info)
 {
@@ -28,92 +26,6 @@ static void init_info(t_format *f_info)
     f_info->address = 0;
 }
 
-static int classify_f(char c, va_list ap, t_format f_info)
-{
-    if (c == '\0')
-        return (-1);
-    else if (c == 'c')
-        return (write_fc(ap, f_info));
-    else if (c == 's')
-        return (write_fs(ap, f_info)); 
-    else if (c == 'p')
-        return (write_fp(ap, f_info)); 
-    else if (c == 'd' || c =='i')
-        return (write_fdi(ap, f_info)); 
-    else if (c == 'u')
-        return (write_fu(ap, f_info));
-    else if (c == 'x' || c == 'X')
-        return (write_fxX(ap, c, f_info)); 
-    else
-        return (write_felse(c, f_info));
-}
-
-static void get_asterisk(va_list ap, t_format *f_info, char c)
-{
-    int asterisk;
-    
-    asterisk = va_arg(ap, int);
-    if (c == 'w')
-    {
-        if (asterisk < 0)
-        {
-            f_info->minus = 1;
-            f_info->width = -1 * asterisk;
-        }
-        else
-            f_info->width = asterisk;
-    }
-    else if (c == 'p')
-    {
-        if (asterisk < 0)
-            f_info->precision = -1;
-        else
-            f_info->precision = asterisk;
-        
-    }
-}
-
-static t_format check_f(const char *arg, va_list ap, t_format f_info)
-{
-    init_info(&f_info);
-    while (ft_ischarset(*arg, g_synf))
-    {
-        if (*arg >= '1' && *arg <= '9')
-        {
-            f_info.width = ft_atoi(arg);
-            arg += ft_numlen(f_info.width);
-            continue ;
-        }
-        else if (*arg == '.')
-        {
-            if (*(++arg) == '*')
-                get_asterisk(ap, &f_info, 'p');
-            else
-            {
-                f_info.precision = ft_atoi(arg);
-                arg += ft_numlen(f_info.precision);
-                continue ;
-            }
-        }
-        else if (*arg == '-')
-            f_info.minus = 1;
-        else if (*arg == '+')
-            f_info.plus = 1;
-        else if (*arg == ' ')
-            f_info.space = 1;
-        else if (*arg == '0')
-            f_info.zero = 1;
-        else if (*arg =='*')// precision과 중복되지 않음 가정
-            get_asterisk(ap, &f_info, 'w');
-        arg++;
-    }
-    if ((f_info.printlen = classify_f(*arg, ap, f_info)) == -1)
-        f_info.address = (char *)arg;
-    else
-        f_info.address = (char *)arg + 1;
-    return (f_info);
-}
-
 int ft_printf(const char * format, ...)
 {
     t_format    f_info;
@@ -121,6 +33,7 @@ int ft_printf(const char * format, ...)
     int         len;
 
     va_start(ap, format);
+    init_info(&f_info);
     len = 0;
     while (*format)
     {
@@ -134,9 +47,8 @@ int ft_printf(const char * format, ...)
         }
         else
         {
-            write(1, format, 1);
+            write(1, format++, 1);
             len++;
-            format++;
         }
     }
     va_end(ap);
@@ -146,7 +58,6 @@ int ft_printf(const char * format, ...)
 int main()
 {
     int num;
-    //char s[]="applepie";
     
     num = printf("%*.*d\n", 15, 8, 1234);
     printf("%d\n", num);

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/07 22:31:30 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/08 15:09:07 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 
 typedef struct s_format
 {
-    int     minus;
-    int     plus;
-    int     space;
-    int     zero;
-    int     hash;
-    int     width;
-    int     precision;
-    int     length;
-    int     printlen;
-    char    *address;
+    int             minus;
+    int             plus;
+    int             space;
+    int             zero;
+    int             hash;
+    int             width;
+    int             precision;
+    int             length;
+    int             printlen;
+    const char      *address;
 }               t_format;
 
 int     write_fc(va_list ap, t_format f_info);
@@ -40,6 +40,8 @@ int     write_fdi(va_list ap, t_format f_info);
 int     write_fu(va_list ap, t_format f_info);
 int     write_fxX(va_list ap, char c, t_format f_info);
 int     write_felse(char c, t_format f_info);
+t_format check_f(const char *arg, va_list ap, t_format f_info);
+int classify_f(char c, va_list ap, t_format f_info);
 
 int     ft_strlen(const char *s);
 void    *ftt_memset(void *s, int c, size_t n);
@@ -48,5 +50,7 @@ int     ft_atoi(const char *str);
 size_t  ft_numlen(int num);
 char    *ft_strjoin(char const *s1, char const *s2);
 void    ft_multifree(int args, ...);
+char    *ftt_itoa(int n);
+char    *ftt_uitoa(unsigned int n);
 
 #endif
