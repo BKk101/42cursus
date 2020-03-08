@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writef_diu.c                                    :+:      :+:    :+:   */
+/*   writef_diu.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 10:58:27 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 15:09:10 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/08 15:23:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,10 @@ int     write_fdi(va_list ap, t_format f_info)
     int size;
     
     num = va_arg(ap, int);
-    str1 = ftt_itoa(num);
     if (f_info.precision > ft_strlen(str1)) //precision 처리
-    {
-        str2 = (char *)malloc(f_info.precision - ft_strlen(str1) + 1);
-        ftt_memset(str2, '0' , f_info.precision - ft_strlen(str1) + 1);
-        str3 = ft_strjoin(str2, str1);
-        ft_multifree(2, str1, str2);
-    }
+        str3 = apply_precision(ftt_itoa(num), f_info);
 
+    //apply_plus_space    
     if (num < 0)  // +, space, 음수 처리
         str1 = ft_strjoin("-", str3);
     else if (num > 0 && f_info.plus > 0)

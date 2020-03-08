@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 15:09:07 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/08 15:21:58 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int     write_fxX(va_list ap, char c, t_format f_info);
 int     write_felse(char c, t_format f_info);
 t_format check_f(const char *arg, va_list ap, t_format f_info);
 int classify_f(char c, va_list ap, t_format f_info);
+char    *apply_precision(char *str1, t_format f_info);
 
 int     ft_strlen(const char *s);
 void    *ftt_memset(void *s, int c, size_t n);
