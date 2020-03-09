@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 20:25:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 21:29:43 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,4 @@ int         ft_printf(const char * format, ...)
     }
     va_end(ap);
     return (len);    
-}
-
-int main()
-{
-    int num;
-    char s[]="12345";
-    
-    num = printf("%*.*s %c\n", 20, 0, s, 'Z');
-    printf("%d\n", num);
-    fflush(stdout);
-    num = ft_printf("%*.*s %c\n", 20, 0, s, 'Z');
-    printf("%d\n", num);
-    //num = ft_printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
-    //printf("%d\n\n", num);
-    //num = printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
-    //printf("%d\n\n", num);
 }

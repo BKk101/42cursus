@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 22:10:22 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/29 04:50:02 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/07 16:17:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ char        *ft_itoa(int n)
     while ((temp /= 10) > 0)
         res[--len] = temp % 10 + '0';
     return (res);
+}
+
+int main()
+{
+    ft_itoa(-12);
 }
