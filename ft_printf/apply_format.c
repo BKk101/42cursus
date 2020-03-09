@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 18:06:51 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 20:25:49 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-char    *apply_precision(char *str, t_format f_info)
+char    *apply_precision_num(char *str, t_format f_info)
 {
     char *temp;
     char *res;
@@ -28,6 +28,25 @@ char    *apply_precision(char *str, t_format f_info)
     else
         res = ft_strjoin(str, "");
     ft_multifree(2, str, temp);
+    return (res);
+}
+
+char    *apply_precision_str(char *str, t_format f_info)
+{
+    char *res;
+    int len;
+
+    len = ft_strlen(str); //str은 부호 뗀 숫자, 이걸로 precision과 비교
+    if (f_info.precision >= 0 && f_info.precision < len)
+    {    
+        res = (char *)malloc(f_info.precision + 1);
+        ft_strlcpy(res, str, f_info.precision + 1);
+    }
+    else
+    {    
+        res = (char *)malloc(len + 1);
+        ft_strlcpy(res, str, len + 1);
+    }
     return (res);
 }
 
@@ -47,7 +66,7 @@ char    *apply_plus_space_negative(long long num, char *str, t_format f_info)
     return (res);
 }
 
-char    *apply_minus_zero_width(int size, char *str, t_format f_info)
+char    *apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 {
     char *temp;
     char *res;
@@ -63,7 +82,7 @@ char    *apply_minus_zero_width(int size, char *str, t_format f_info)
     }
     else if (f_info.width > len) //precision 유무에 따라 0 적용 //s일때 따로
     {
-        if (f_info.precision >= 0)
+        if (f_info.precision >= 0 && c != 's')
             f_info.zero = 0;
         flag = (f_info.zero > 0 ? '0' : ' ');
         ftt_memset(temp, flag, size - len + 1);

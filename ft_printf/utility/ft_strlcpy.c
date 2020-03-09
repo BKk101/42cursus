@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/05 15:36:35 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 20:18:46 by bykim            ###   ########.fr       */
+/*   Created: 2020/02/27 15:12:16 by bykim             #+#    #+#             */
+/*   Updated: 2020/03/09 18:34:50 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int  ft_numlen(int num)
+int  ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int len;
+	size_t len;
 
-    len = 0;
-    while (num != 0)
-    {
-        num /= 10;
-        len++;
-    }
-    return (len);
+	len = 0;
+	while (src[len])
+		len++;
+	while (size > 1 && *src)
+	{
+		*dest++ = *src++;
+		size--;
+	}
+	if (size != 0)
+		*dest = '\0';
+	return (len);
 }

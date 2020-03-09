@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:54:51 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 15:54:51 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 20:20:27 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void get_else(const char **arg, t_format *f_info)
     *arg += 1;
 }
 
-t_format    check_f(const char *arg, va_list ap, t_format f_info)
+t_format    check_format(const char *arg, va_list ap, t_format f_info)
 {
     while (ft_ischarset(*arg, g_f_syn))
     {

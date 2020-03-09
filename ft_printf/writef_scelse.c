@@ -1,43 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writef_xXelse.c                                 :+:      :+:    :+:   */
+/*   writef_scelse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 23:58:32 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 18:07:45 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 20:25:58 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-
-int         write_felse(char c, t_format f_info) //리턴값 플래그 설정(자리수) + 1
-{
-    (void)f_info;
-    write(1, &c, 1);
-    return (1);
-}
-
-int     write_fc(va_list ap, t_format f_info)
-{
-    char temp;
-
-    (void)f_info;
-    temp = va_arg(ap, int);
-    write(1, &temp, sizeof(char));
-    return (1);
-}
-
-int     write_fs(va_list ap, t_format f_info)
+int write_fs(va_list ap, t_format f_info)
 {
     char    *temp;
-    int     len;
+    char    *str1;
+    char    *str2;
+    int     size;
     
-    (void)f_info;
-    temp = va_arg(ap, char *);
-    len = ft_strlen(temp);
-    write(1, temp, len);
-    return (len);
+    temp = va_arg(ap, char *);    
+    str1 = apply_precision_str(temp, f_info); //precision 처리
+    size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1)); //size 처리
+    str2 = apply_minus_zero_width('s', size, str1, f_info); // -, 0, width 처리
+    write(1, str2, size);
+    free(str2);
+    return (size);
+}
+
+int write_fc(va_list ap, t_format f_info)
+{
+    char    temp;
+    char    *str1;
+    char    *str2;
+    int     size;
+    
+    temp = va_arg(ap, int);    
+    str1 = (char *)malloc(2);
+    str1[0] = temp;
+    str1[1] = '\0';
+    size = (f_info.width > 1 ? f_info.width : 1); //size 처리
+    str2 = apply_minus_zero_width('c', size, str1, f_info); // -, 0, width 처리
+    write(1, str2, size);
+    free(str2);
+    return (size);
+}
+
+int write_felse(char c, t_format f_info)
+{
+    char    *str1;
+    char    *str2;
+    int     size;
+       
+    str1 = (char *)malloc(2);
+    str1[0] = c;
+    str1[1] = '\0';
+    size = (f_info.width > 1 ? f_info.width : 1); //size 처리
+    str2 = apply_minus_zero_width('c', size, str1, f_info); // -, 0, width 처리
+    write(1, str2, size);
+    free(str2);
+    return (size);
 }

@@ -6,7 +6,7 @@
 #    By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/02 19:11:12 by bykim             #+#    #+#              #
-#    Updated: 2020/03/04 20:47:05 by bykim            ###   ########.fr        #
+#    Updated: 2020/03/09 20:31:27 by bykim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,5 +33,3 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
-
-bonus :

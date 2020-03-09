@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 18:03:37 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 20:25:29 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void init_info(t_format *f_info)
     f_info->address = 0;
 }
 
-int ft_printf(const char * format, ...)
+int         ft_printf(const char * format, ...)
 {
     t_format    f_info;
     va_list     ap;
@@ -39,7 +39,7 @@ int ft_printf(const char * format, ...)
         if (*format == '%')
         {
             init_info(&f_info);
-            f_info = check_f(++format, ap, f_info);
+            f_info = check_format(++format, ap, f_info);
             format = f_info.address;
             if (f_info.printlen == -1)
                 continue;
@@ -58,21 +58,15 @@ int ft_printf(const char * format, ...)
 int main()
 {
     int num;
-    char s[]="123";
+    char s[]="12345";
     
-    num = printf("%+-*.*p\n", 20, 13, s);
+    num = printf("%*.*s %c\n", 20, 0, s, 'Z');
     printf("%d\n", num);
     fflush(stdout);
-    num = ft_printf("%+-*.*p\n", 20, 13, s);
+    num = ft_printf("%*.*s %c\n", 20, 0, s, 'Z');
     printf("%d\n", num);
     //num = ft_printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
     //printf("%d\n\n", num);
     //num = printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
     //printf("%d\n\n", num);
 }
-
-//에러
-//%c 하고 뒤에 인자 안들어 온 경우
-//널문자 입력
-//정의되지 않은 %* 사용
-//%c 하고 형식에 안맞는 입력 (%c, "123")
