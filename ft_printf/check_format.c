@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:54:51 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 14:57:07 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 15:54:51 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_format    check_f(const char *arg, va_list ap, t_format f_info)
         else
             get_else(&arg, &f_info);
     }
-    if ((f_info.printlen = classify_f(*arg, ap, f_info)) == -1)
+    if ((f_info.printlen = classify_type(*arg, ap, f_info)) == -1)
         f_info.address = arg;
     else
         f_info.address = arg + 1;

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 14:53:09 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 16:26:11 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int ft_printf(const char * format, ...)
     int         len;
 
     va_start(ap, format);
-    init_info(&f_info);
     len = 0;
     while (*format)
     {
         if (*format == '%')
         {
+            init_info(&f_info);
             f_info = check_f(++format, ap, f_info);
             format = f_info.address;
             if (f_info.printlen == -1)
@@ -59,10 +59,10 @@ int main()
 {
     int num;
     
-    num = printf("%*.*d\n", 15, 8, 1234);
+    num = printf("%*.*d %u\n", 15, 8, 1234, -1);
     printf("%d\n", num);
     fflush(stdout);
-    num = ft_printf("%*.*d\n", 15, 8, 1234);
+    num = ft_printf("%*.*d %u\n", 15, 8, 1234, -1);
     printf("%d\n", num);
     //num = ft_printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
     //printf("%d\n\n", num);

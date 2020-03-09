@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   classify_format.c                                  :+:      :+:    :+:   */
+/*   classify_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 14:49:13 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 14:52:25 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 15:54:50 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int classify_f(char c, va_list ap, t_format f_info)
+int classify_type(char c, va_list ap, t_format f_info)
 {
     if (c == '\0')
         return (-1);
