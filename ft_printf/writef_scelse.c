@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writef_pcs.c                                    :+:      :+:    :+:   */
+/*   ft_writef_xXelse.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 23:09:10 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 18:24:21 by bykim            ###   ########.fr       */
+/*   Created: 2020/03/03 23:58:32 by bykim             #+#    #+#             */
+/*   Updated: 2020/03/09 18:07:45 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-static char    g_hex[] = "0123456789abcdef";
 
-static int     write_hex(long long memory, int len)
+int         write_felse(char c, t_format f_info) //리턴값 플래그 설정(자리수) + 1
 {
-	unsigned char temp;
-
-	if (memory == 0)
-    {
-        write(1, "0x", 2);
-        return (len + 2);
-    }
-	temp = g_hex[memory % 16];
-	memory /= 16;
-	len = write_hex(memory, len + 1);
-	write(1, &temp, 1);
-    return (len);
-}
-
-int     write_fp(va_list ap, t_format f_info)
-{
-    char    *temp;
-    
     (void)f_info;
-    temp = va_arg(ap, char *);
-    return (write_hex((long long)temp, 0));
+    write(1, &c, 1);
+    return (1);
 }
 
 int     write_fc(va_list ap, t_format f_info)

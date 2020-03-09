@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 16:26:11 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 18:03:37 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ int ft_printf(const char * format, ...)
 int main()
 {
     int num;
+    char s[]="123";
     
-    num = printf("%*.*d %u\n", 15, 8, 1234, -1);
+    num = printf("%+-*.*p\n", 20, 13, s);
     printf("%d\n", num);
     fflush(stdout);
-    num = ft_printf("%*.*d %u\n", 15, 8, 1234, -1);
+    num = ft_printf("%+-*.*p\n", 20, 13, s);
     printf("%d\n", num);
     //num = ft_printf("%d\n%i\n%u\n%p\n%s\n%c\n%x\n%X\n", 32, 23, -10, s, s, 'Z', 1328, 1328);
     //printf("%d\n\n", num);

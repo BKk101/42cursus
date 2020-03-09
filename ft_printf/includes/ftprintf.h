@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 16:22:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/09 18:09:44 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int     write_fs(va_list ap, t_format f_info);
 int     write_fp(va_list ap, t_format f_info);
 int     write_fdi(va_list ap, t_format f_info);
 int     write_fu(va_list ap, t_format f_info);
-int     write_fxX(va_list ap, char c, t_format f_info);
+int     write_fxX(va_list ap, t_format f_info, char c);
 int     write_felse(char c, t_format f_info);
 t_format check_f(const char *arg, va_list ap, t_format f_info);
 int classify_type(char c, va_list ap, t_format f_info);
