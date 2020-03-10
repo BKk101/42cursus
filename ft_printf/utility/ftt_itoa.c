@@ -6,11 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:03:41 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/08 15:09:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/10 13:20:17 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include <stdlib.h>
 
 char        *ftt_itoa(int n)
 {

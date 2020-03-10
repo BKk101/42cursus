@@ -6,34 +6,22 @@
 #    By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/02 19:11:12 by bykim             #+#    #+#              #
-#    Updated: 2020/03/10 16:52:13 by bykim            ###   ########.fr        #
+#    Updated: 2020/03/10 16:32:58 by bykim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
 CFLAGS= -Wall -Wextra -Werror
 
-NAME=libftprintf.a
 SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.c=.o)
-SUBSRCS=./utility/*.c
-SUBOBJS=$(SUBSRCS:.c=.o)
-INCS=includes
 
-all : $(NAME)
+all : $(OBJS)
 
 %.o : %.c
-	$(CC) -c $(CFLAGS) $< -I$(INCS)
-
-$(NAME) : $(OBJS)
-	make -C utility
-	ar -rc $@ $(OBJS) $(SUBOBJS)
+	$(CC) -c $(CFLAGS) $<
 
 clean :
 	rm -f $(OBJS)
-	make clean -C utility
 
-fclean : clean
-	rm -f $(NAME)
-
-re : fclean all
+re : clean all

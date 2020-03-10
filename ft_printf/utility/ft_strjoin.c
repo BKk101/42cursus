@@ -6,11 +6,21 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 21:11:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/06 18:15:41 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/10 14:37:17 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include <stdlib.h>
+
+static int		ft_strlen(const char *s)
+{
+    int len;
+
+    len = 0;
+    while (s[len])
+        len++;
+    return (len);
+}
 
 static char     *ftt_strcat(char *dest, char const *src)
 {
@@ -23,7 +33,7 @@ char            *ft_strjoin(char const *s1, char const *s2)
 {
     char	*temp;
 	char    *res;
-    size_t  len;
+    int		len;
 
 	len = ft_strlen(s1);
     len += ft_strlen(s2);
