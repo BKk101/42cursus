@@ -41,3 +41,20 @@ char    *ft_strchr(const char *s, int c)
         return (ptr);
     return (0);
 }
+
+size_t  ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t len;
+
+	len = 0;
+	while (src[len])
+		len++;
+	while (size > 1 && *src)
+	{
+		*dest++ = *src++;
+		size--;
+	}
+	if (size != 0)
+		*dest = '\0';
+	return (len);
+}

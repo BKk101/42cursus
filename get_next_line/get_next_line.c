@@ -16,17 +16,26 @@
 int get_next_line(int fd, char **line)
 {
     static char buf[BUFFER_SIZE] = {0};
-    int num;
+    char *start;
+	char *end;
+	char *temp;
+	int num;
 
-    while()
+    start = buf;
+	while(Is_InCharset('\n', start) == 0)//start 대신  buf해도 될듯
     {
         num = read(fd, buf, BUFFER_SIZE);
-        if (num == 0) //한번에 다 읽은 경우
-            ft_strchr(buf, '\n');//\n 올때까지 찾기
-        else if(Is_InCharset('\n', buf)) 
-
+    	if(Is_InCharset('\n', start)) //한번 읽어서 개행 포함
+		{
+			end = ft_strchr(start, '\n');
+			temp = (char *)malloc(end - start + 1);
+			ft_strlcpy(temp, start, end - start + 1);
+		}
         else //여러번 읽는 경우
-            continue;
+		{    
+			buf += BUFFER_SIZE;
+			continue;
+		}
     }
     return (0);
 }
