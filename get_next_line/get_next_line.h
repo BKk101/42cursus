@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 16:01:54 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/12 21:54:45 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/15 22:10:43 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-int get_next_line(int fd, char **line);
-int		Is_InCharset(char str, char *charset);
+int     get_next_line(int fd, char **line);
 char    *ft_strchr(const char *s, int c);
-size_t  ft_strlcpy(char *dest, const char *src, size_t size);
+char    *ft_strjoin(char *s1, char const *s2);
+char	*ft_strdup(const char *src, int byte);
+void    *ft_memset(void *s, int c, size_t n);
+size_t  ft_strlen(const char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 20:20:15 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/12 16:04:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_format
     const char      *address;
 }               t_format;
 
+int         ft_printf(const char * format, ...);
 t_format    check_format(const char *arg, va_list ap, t_format f_info);
 int         classify_type(char c, va_list ap, t_format f_info);
 int         write_fc(va_list ap, t_format f_info);

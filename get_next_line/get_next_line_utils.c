@@ -6,24 +6,20 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 16:04:53 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/12 21:55:57 by bykim            ###   ########.fr       */
+/*   Updated: 2020/03/15 22:10:48 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		Is_InCharset(char str, char *charset)
+size_t  ft_strlen(const char *s)
 {
-	int i;
+    size_t len;
 
-	i = 0;
-	while (charset[i])
-	{
-		if (str == charset[i])
-			return (i + 1);
-		i++;
-	}
-	return (0);
+    len = 0;
+    while (s[len])
+        len++;
+    return (len);
 }
 
 char    *ft_strchr(const char *s, int c)
@@ -42,19 +38,53 @@ char    *ft_strchr(const char *s, int c)
     return (0);
 }
 
-size_t  ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strdup(const char *src, int len)
 {
-	size_t len;
+	char *ptr;
+
+	if ((ptr = (char *)malloc(len + 1)) == 0)
+		return (0);
+	ptr[len] = 0;
+	while (--len >= 0)
+		ptr[len] = src[len];
+	return (ptr);
+}
+
+void    *ft_memset(void *s, int c, size_t n)
+{
+    unsigned char   *temp;
+    unsigned long   idx;
+
+    temp = (unsigned char *)s;
+    idx = 0;
+    while (idx < n)
+        temp[idx++] = (unsigned char)c;
+    return (s);
+}
+
+char	*ft_strjoin(char *s1, char const *s2)
+{
+    char	*temp;
+	char    *res;
+    int		len;
+	int		num;
 
 	len = 0;
-	while (src[len])
+	while (s1[len])
 		len++;
-	while (size > 1 && *src)
-	{
-		*dest++ = *src++;
-		size--;
-	}
-	if (size != 0)
-		*dest = '\0';
-	return (len);
+	num = 0;
+    while (s2[num++])
+		len++;
+    if ((res = (char *)malloc(len + 1)) == 0)
+        return (0);
+	temp = res;
+	num = 0;
+	while (s1[num] != '\0')
+		*temp++ = s1[num++];
+	while (*s2 != '\0')
+		*temp++ = *s2++;
+	*temp = 0;
+	free(s1);
+	return (res);
 }
+
