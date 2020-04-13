@@ -6,7 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:07:40 by bykim             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/04/13 19:55:54 by bykim            ###   ########.fr       */
+=======
+/*   Updated: 2020/04/13 22:14:44 by bykim            ###   ########.fr       */
+>>>>>>> 621995f617f190f71ad2fe7abe651c97f2212685
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +28,23 @@ static int	is_instr(const char *str, const char *to_find, size_t len, size_t i)
 
 char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
+<<<<<<< HEAD
     size_t	i;
     char	*rtn;
+=======
+	size_t	i;
+	char	*rtn;
+>>>>>>> 621995f617f190f71ad2fe7abe651c97f2212685
 
 	rtn = (char *)big;
-    i = 0;
+	i = 0;
 	if (*little == '\0')
 		return (rtn);
 	while (rtn[i] != '\0' && i < len)
 	{
 		if (is_instr(&rtn[i], little, len, i))
 			return (&rtn[i]);
-        i++;
+		i++;
 	}
 	return (0);
 }

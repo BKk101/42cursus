@@ -6,7 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:41:36 by bykim             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/04/13 19:55:35 by bykim            ###   ########.fr       */
+=======
+/*   Updated: 2020/04/13 22:06:58 by bykim            ###   ########.fr       */
+>>>>>>> 621995f617f190f71ad2fe7abe651c97f2212685
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +18,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t			i;
+	size_t			i;
 	unsigned char	c1;
 	unsigned char	c2;
 
@@ -31,7 +35,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			s1++;
 			s2++;
-        	i++;
+			i++;
 		}
 	}
 	return (0);

@@ -6,7 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 22:04:32 by bykim             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/04/13 19:53:37 by bykim            ###   ########.fr       */
+=======
+/*   Updated: 2020/04/13 22:11:40 by bykim            ###   ########.fr       */
+>>>>>>> 621995f617f190f71ad2fe7abe651c97f2212685
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +44,7 @@ static char		**ft_split_word(char const *s, char c, char **des)
 		temp = (char *)s;
 		while (*s != c && *s != '\0')
 			s++;
-		if((*des = (char *)malloc(s - temp + 1)) == 0)
+		if ((*des = (char *)malloc(s - temp + 1)) == 0)
 		{
 			free_dptr(res, des);
 			return (0);
@@ -72,7 +76,7 @@ char			**ft_split(char const *s, char c)
 	}
 	if ((temp = (char **)malloc(sizeof(char *) * (word + 1))) == 0)
 		return (0);
-	if ((res= ft_split_word(s, c, temp)) == 0)
+	if ((res = ft_split_word(s, c, temp)) == 0)
 		free(temp);
 	return (res);
 }

@@ -6,7 +6,11 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 15:01:19 by bykim             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/04/13 19:56:54 by bykim            ###   ########.fr       */
+=======
+/*   Updated: 2020/04/13 22:10:30 by bykim            ###   ########.fr       */
+>>>>>>> 621995f617f190f71ad2fe7abe651c97f2212685
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +54,13 @@ char		*ft_strtrim(char const *s1, char const *set)
 	{
 		while (is_incharset(s1[len], set) == 0 && s1[len] != '\0')
 			len++;
-		end = (char * )&s1[len];
+		end = (char *)&s1[len];
 		if (s1[len] == '\0')
 			break ;
 		while (is_incharset(s1[len], set))
 			len++;
 	}
-	if((res = (char *)malloc(len + 1)) == 0)
+	if ((res = (char *)malloc(len + 1)) == 0)
 		return (0);
 	if (len == 0)
 		res[0] = '\0';
