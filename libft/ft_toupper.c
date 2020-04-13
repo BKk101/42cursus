@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 18:05:07 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/27 18:07:49 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:23:30 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    else
-        return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else
+		return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 17:37:52 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/01 17:53:48 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:22:23 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int ft_lstsize(t_list *lst)
 {
-    int len;
+	int len;
 
-    len = 0;
-    while (lst)
-    {
-        len++;
-        lst = lst->next;
-    }
-    return (len);
+	len = 0;
+	while (lst)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
 }

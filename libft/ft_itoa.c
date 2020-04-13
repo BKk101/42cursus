@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 22:10:22 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/07 16:17:09 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:21:33 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,29 @@
 
 char        *ft_itoa(int n)
 {
-    long long   temp;
-    size_t      len;
-    char        *res;
+	long long   temp;
+	size_t      len;
+	char        *res;
 
-    len= 1;
-    temp = n;
-    if (n < 0)
-        temp *= -1;
-    if (n < 0)
-        len++;
-    while ((temp /= 10) > 0)
-        len++;
-    if ((res = (char *)malloc(len + 1)) == 0)
-        return (0);
-    if (n < 0)
-        res[0] = '-';
-    if (n == 0)
-        res[0] = '0';
-    temp = (long long)n * 10;
-    if (n < 0)
-        temp *= -1;
-    res[len] = '\0';
-    while ((temp /= 10) > 0)
-        res[--len] = temp % 10 + '0';
-    return (res);
-}
-
-int main()
-{
-    ft_itoa(-12);
+	len= 1;
+	temp = n;
+	if (n < 0)
+		temp *= -1;
+	if (n < 0)
+		len++;
+	while ((temp /= 10) > 0)
+		len++;
+	if ((res = (char *)malloc(len + 1)) == 0)
+		return (0);
+	if (n < 0)
+		res[0] = '-';
+	if (n == 0)
+		res[0] = '0';
+	temp = (long long)n * 10;
+	if (n < 0)
+		temp *= -1;
+	res[len] = '\0';
+	while ((temp /= 10) > 0)
+		res[--len] = temp % 10 + '0';
+	return (res);
 }

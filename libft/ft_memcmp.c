@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 13:59:13 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/27 15:11:43 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:22:32 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    unsigned char   *ptr1;
-    unsigned char   *ptr2;
-    unsigned int    i;
+	unsigned char   *ptr1;
+	unsigned char   *ptr2;
+	unsigned int    i;
 
 	ptr1 = (unsigned char *)s1;
-    ptr2 = (unsigned char *)s2;
-    i = 0;
+	ptr2 = (unsigned char *)s2;
+	i = 0;
 	if (n == 0)
 		return (0);
 	while (i < n)
@@ -31,7 +31,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 		{
 			ptr1++;
 			ptr2++;
-            i++;
+			i++;
 		}
 	}
 	return (0);

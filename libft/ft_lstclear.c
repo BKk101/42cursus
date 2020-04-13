@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 19:46:46 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/01 20:06:38 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:22:06 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void    ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    t_list *temp;
+	t_list *temp;
 
-    while (*lst)
-    {
-        del((*lst)->content);
-        temp = (*lst)->next;
-        free(*lst);
-        *lst = temp;
-    }
+	while (*lst)
+	{
+		del((*lst)->content);
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
 }

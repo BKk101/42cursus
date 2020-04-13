@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 17:06:52 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/29 03:02:08 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:21:43 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void    ft_bzero(void *s, size_t n)
 {
-    unsigned char   *temp;
-    unsigned long   idx;
-
-    temp = (unsigned char *)s;
-    idx = 0;
-    while (idx < n)
-        temp[idx++] = 0;
-    return ;
+	unsigned char   *temp;
+	unsigned long   idx;
+	
+	temp = (unsigned char *)s;
+	idx = 0;
+	while (idx < n)
+		temp[idx++] = 0;
+	return ;
 }

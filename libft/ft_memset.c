@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:17:03 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/27 15:46:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:22:40 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void    *ft_memset(void *s, int c, size_t n)
 {
-    unsigned char   *temp;
-    unsigned long   idx;
+	unsigned char   *temp;
+	unsigned long   idx;
 
-    temp = (unsigned char *)s;
-    idx = 0;
-    while (idx < n)
-        temp[idx++] = (unsigned char)c;
-    return (s);
+	temp = (unsigned char *)s;
+	idx = 0;
+	while (idx < n)
+		temp[idx++] = (unsigned char)c;
+	return (s);
 }

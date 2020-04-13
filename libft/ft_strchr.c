@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 16:23:48 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/27 16:53:04 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 22:22:56 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char    *ft_strchr(const char *s, int c)
 {
-    char *ptr;
+	char *ptr;
 
-    ptr = (char *)s;
-    while (*ptr)
-    {
-        if (*ptr == (unsigned char)c)
-            return (ptr);
-        ptr++;
-    }
-    if (c == 0)
-        return (ptr);
-    return (0);
+	ptr = (char *)s;
+	while (*ptr)
+	{
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		ptr++;
+	}
+	if (c == 0)
+		return (ptr);
+	return (0);
 }

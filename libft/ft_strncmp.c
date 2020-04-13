@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:41:36 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/01 23:02:20 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/12 20:46:49 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     size_t			i;
 	unsigned char	c1;
@@ -31,7 +31,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			s1++;
 			s2++;
-            i++;
+        	i++;
 		}
 	}
 	return (0);
