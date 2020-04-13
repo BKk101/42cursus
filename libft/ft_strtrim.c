@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 15:01:19 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:23:22 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 22:10:30 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  is_incharset(char str, char const *charset)
+static int	is_incharset(char str, char const *charset)
 {
 	int i;
 
@@ -26,7 +26,7 @@ static int  is_incharset(char str, char const *charset)
 	return (0);
 }
 
-static char *make_trim(char *des, char *start, char *end)
+static char	*make_trim(char *des, char *start, char *end)
 {
 	int len;
 
@@ -37,10 +37,10 @@ static char *make_trim(char *des, char *start, char *end)
 	return (des);
 }
 
-char        *ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	char        *res;
-	char        *end;
+	char		*res;
+	char		*end;
 	long long	len;
 
 	while (is_incharset(*s1, set))
@@ -50,13 +50,13 @@ char        *ft_strtrim(char const *s1, char const *set)
 	{
 		while (is_incharset(s1[len], set) == 0 && s1[len] != '\0')
 			len++;
-		end = (char * )&s1[len];
+		end = (char *)&s1[len];
 		if (s1[len] == '\0')
 			break ;
 		while (is_incharset(s1[len], set))
 			len++;
 	}
-	if((res = (char *)malloc(len + 1)) == 0)
+	if ((res = (char *)malloc(len + 1)) == 0)
 		return (0);
 	if (len == 0)
 		res[0] = '\0';
