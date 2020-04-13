@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 22:04:32 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:54 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:53:37 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void		ftt_strncpy(char *dest, char *start, char *end)
 
 static char		**ft_split_word(char const *s, char c, char **des)
 {
-	char **res;
-	char *temp;
+	char	**res;
+	char	*temp;
 
 	res = des;
 	while (*s)

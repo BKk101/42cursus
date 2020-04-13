@@ -6,16 +6,16 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 16:45:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:23:18 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:56:12 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char    *ptr;
-	int     i;
+	char	*ptr;
+	int		i;
 
 	ptr = (char *)s;
 	i = 0;

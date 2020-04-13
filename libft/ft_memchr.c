@@ -6,15 +6,15 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 13:57:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:29 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:51:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char	*ptr;
 
 	ptr = (unsigned char *)s;
 	while (n-- > 0)

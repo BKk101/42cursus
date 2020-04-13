@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:07:40 by bykim             #+#    #+#             */
-/*   Updated: 2020/02/27 17:41:08 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:55:54 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  is_instr(const char *str, const char *to_find, size_t len, size_t i)
+static int	is_instr(const char *str, const char *to_find, size_t len, size_t i)
 {
 	if (*to_find == '\0')
 		return (1);
@@ -22,10 +22,10 @@ static int  is_instr(const char *str, const char *to_find, size_t len, size_t i)
 		return (0);
 }
 
-char        *ft_strnstr(const char *big, const char *little, size_t len)
+char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t  i;
-    char    *rtn;
+    size_t	i;
+    char	*rtn;
 
 	rtn = (char *)big;
     i = 0;

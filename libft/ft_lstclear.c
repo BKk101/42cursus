@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 19:46:46 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:06 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:50:06 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *temp;
 

@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 01:10:54 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:45 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:52:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);

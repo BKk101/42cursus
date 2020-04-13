@@ -6,15 +6,15 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 16:23:48 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:56 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:53:51 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char *ptr;
+	char	*ptr;
 
 	ptr = (char *)s;
 	while (*ptr)

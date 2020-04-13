@@ -6,19 +6,19 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 22:10:22 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:21:33 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:49:25 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char        *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	long long   temp;
-	size_t      len;
-	char        *res;
+	long long	temp;
+	size_t		len;
+	char		*res;
 
-	len= 1;
+	len = 1;
 	temp = n;
 	if (n < 0)
 		temp *= -1;

@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 17:12:20 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:22:20 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 19:50:53 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list *res;
 
