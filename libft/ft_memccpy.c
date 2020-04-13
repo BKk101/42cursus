@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 20:15:33 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/13 19:51:14 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 23:28:55 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (n-- > 0)
 	{
 		*(dest_ptr++) = *(src_ptr);
-		if(*src_ptr == (unsigned char)c)
+		if (*src_ptr == (unsigned char)c)
 			return ((void *)dest_ptr);
 		src_ptr++;
 	}
