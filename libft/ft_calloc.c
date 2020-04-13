@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 21:56:22 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/12 22:36:21 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/13 22:15:56 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (0);
 	ft_memset(ptr, 0, nmemb * size);
 	return (ptr);
-	//hi
 }
