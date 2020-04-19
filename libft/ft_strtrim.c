@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 20:31:37 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 23:36:30 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 23:40:37 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 	{
 		while (is_incharset(s1[len], set) == 0 && s1[len] != '\0')
 			len++;
+		end = (char *)&s1[len];
 		if (s1[len] == '\0')
 			break ;
-		end = (char *)&s1[len];
 		while (is_incharset(s1[len], set))
 			len++;
 	}
