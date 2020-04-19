@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 15:52:29 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/13 23:34:04 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/20 02:37:07 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	dlen = 0;
 	slen = 0;
-	while (dest[i] != '\0')
+	while (dest[i] != '\0' && i < size)
 	{
 		i++;
 		dlen++;
@@ -30,8 +30,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		slen++;
 	while (*src != '\0' && i + 1 < size)
 	{
-		dest[i++] = *src;
-		src++;
+		dest[i] = *src++;
+		i++;
 	}
 	dest[i] = '\0';
 	if (size > dlen)

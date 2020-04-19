@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 20:29:36 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 20:34:30 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/20 02:18:10 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	idx;
 
+	if (!s || ft_strlen(s) <= start || !len)
+		return (ft_strdup(""));
 	if ((res = (char *)malloc(len + 1)) == 0)
 		return (0);
 	idx = 0;
