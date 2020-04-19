@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 20:31:51 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 20:35:12 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 21:40:53 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	c2;
 
 	i = 0;
-	if (n == 0)
+	if (n == 0 || (*s1 == '\0' && *s2 == '\0'))
 		return (0);
 	while (i < n)
 	{

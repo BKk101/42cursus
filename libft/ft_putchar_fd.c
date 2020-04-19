@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 01:01:32 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/13 23:29:22 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 21:45:18 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	unsigned char c2;
+
+	c2 = (unsigned)c;
+	write(fd, &c2, 1);
 }

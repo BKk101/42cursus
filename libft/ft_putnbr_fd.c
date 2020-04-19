@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 01:12:56 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/13 23:32:19 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 21:44:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	ft_putnbr_fd(int n, int fd)
 
 	str = ft_itoa(n);
 	write(fd, str, ft_strlen(str));
+	free(str);
 }
