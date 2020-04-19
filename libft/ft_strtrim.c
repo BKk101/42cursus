@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 20:31:37 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 23:59:46 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/20 01:24:27 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 		while (is_incharset(s1[len], set))
 			len++;
 	}
-	if ((res = (char *)malloc(end - s1 + 1)) == 0)
-		return (0);
 	if (end == 0)
+		return (ft_strdup(""));
+	if ((res = (char *)malloc(end - s1 + 1)) == 0)
 		return (0);
 	res = make_trim(res, (char *)s1, end);
 	return (res);
