@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 01:12:56 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 22:29:00 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 23:17:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	putnbr(long long n, int fd)
 {
 	long long	remainder;
 	char		c;
+
 	if (n == 0)
 		return ;
 	remainder = n % 10;
