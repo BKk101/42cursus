@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 01:12:56 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/19 22:09:10 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/19 22:17:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long long	temp;
 
+	temp = n;
 	if (n == 0)
 	{
-		write(fd, &n, 1);
+		write(fd, &temp, 1);
 		return ;
 	}
-	temp = n;
 	if (temp < 0)
 	{
 		temp *= -1;
