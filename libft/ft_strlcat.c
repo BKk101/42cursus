@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 15:52:29 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/20 02:37:07 by bykim            ###   ########.fr       */
+/*   Updated: 2020/04/20 11:57:48 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[i] = *src++;
 		i++;
 	}
-	dest[i] = '\0';
+	if (i < size)
+		dest[i] = '\0';
 	if (size > dlen)
 		return (dlen + slen);
 	else
