@@ -6,36 +6,26 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 16:04:53 by bykim             #+#    #+#             */
-/*   Updated: 2020/04/13 18:27:46 by bykim            ###   ########.fr       */
+/*   Updated: 2020/06/02 18:57:04 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-size_t  ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-    size_t len;
+	char *ptr;
 
-    len = 0;
-    while (s[len])
-        len++;
-    return (len);
-}
-
-char    *ft_strchr(const char *s, int c)
-{
-    char *ptr;
-
-    ptr = (char *)s;
-    while (*ptr)
-    {
-        if (*ptr == (unsigned char)c)
-            return (ptr);
-        ptr++;
-    }
-    if (c == 0)
-        return (ptr);
-    return (0);
+	ptr = (char *)s;
+	while (*ptr)
+	{
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		ptr++;
+	}
+	if (c == 0)
+		return (ptr);
+	return (0);
 }
 
 char	*ft_strdup(const char *src, int len)
@@ -50,33 +40,21 @@ char	*ft_strdup(const char *src, int len)
 	return (ptr);
 }
 
-void    *ft_memset(void *s, int c, size_t n)
+char	*ft_strjoin(char *s1, char *s2)
 {
-    unsigned char   *temp;
-    unsigned long   idx;
-
-    temp = (unsigned char *)s;
-    idx = 0;
-    while (idx < n)
-        temp[idx++] = (unsigned char)c;
-    return (s);
-}
-
-char	*ft_strjoin(char *s1, char const *s2)
-{
-    char	*temp;
-	char    *res;
-    int		len;
+	char	*temp;
+	char	*res;
+	int		len;
 	int		num;
 
 	len = 0;
 	while (s1[len])
 		len++;
 	num = 0;
-    while (s2[num++])
+	while (s2[num++])
 		len++;
-    if ((res = (char *)malloc(len + 1)) == 0)
-        return (0);
+	if ((res = (char *)malloc(len + 1)) == 0)
+		return (0);
 	temp = res;
 	num = 0;
 	while (s1[num] != '\0')
@@ -86,4 +64,41 @@ char	*ft_strjoin(char *s1, char const *s2)
 	*temp = 0;
 	free(s1);
 	return (res);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*temp;
+	unsigned long	idx;
+
+	temp = (unsigned char *)s;
+	idx = 0;
+	while (idx < n)
+		temp[idx++] = (unsigned char)c;
+	return (s);
+}
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*dest_ptr;
+	unsigned char	*src_ptr;
+	size_t			idx;
+
+	dest_ptr = (unsigned char *)dest;
+	src_ptr = (unsigned char *)src;
+	idx = 0;
+	if (!dest && !src)
+		return (0);
+	if ((long long)dest_ptr > (long long)src_ptr)
+	{
+		while (n-- > 0)
+			*(dest_ptr + n) = *(src_ptr + n);
+	}
+	else
+	{
+		idx = 0;
+		while (idx++ < n)
+			*(dest_ptr++) = *(src_ptr++);
+	}
+	return (dest);
 }

@@ -6,21 +6,21 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 15:36:35 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 20:18:46 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/11 18:58:30 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int  ft_numlen(int num)
+int	ft_numlen(int num)
 {
-    int len;
+	int len;
 
-    len = 0;
-    while (num != 0)
-    {
-        num /= 10;
-        len++;
-    }
-    return (len);
+	len = (num == 0) ? 1 : 0;
+	while (num != 0)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
 }
