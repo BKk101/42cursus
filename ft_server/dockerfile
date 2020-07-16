@@ -1,0 +1,24 @@
+FROM debian:buster
+
+WORKDIR /ft_server
+
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y vim
+RUN apt-get install -y openssl 
+RUN apt-get install -y nginx
+RUN apt-get install -y php-fpm
+RUN apt-get install -y mariadb-server php-mysql
+RUN apt-get install -y wget
+
+COPY ./srcs/build.sh build.sh
+COPY ./srcs/index_on.sh index_on.sh
+COPY ./srcs/index_off.sh index_off.sh
+COPY ./srcs/default default
+COPY ./srcs/phpconfig.php phpconfig.php
+COPY ./srcs/wpconfig.php wpconfig.php
+RUN chmod 774 build.sh index_off.sh index_on.sh
+
+CMD ./build.sh; /bin/bash
+
+EXPOSE 80
